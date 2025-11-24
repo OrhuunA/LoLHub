@@ -65,7 +65,11 @@ You need your own key for the app to fetch data:
 If you want to run the source code directly:
 
 ```bash
-# Install dependencies
+# Install dependencies<img width="342" height="581" alt="d" src="https://github.com/user-attachments/assets/6ecf6a1b-cf6c-42c7-8b16-39a194192d14" />
+<img width="439" height="521" alt="c" src="https://github.com/user-attachments/assets/620d8618-2dc9-4b4b-98c5-be9f3ad61317" />
+<img width="448" height="527" alt="b" src="https://github.com/user-attachments/assets/6a4997aa-272b-4340-9f4d-1844dded6759" />
+<img width="995" height="727" alt="a" src="https://github.com/user-attachments/assets/103bb63c-fd5c-45ec-b2c4-a829f5737ada" />
+
 pip install customtkinter requests pillow cryptography
 
 # Run the app
