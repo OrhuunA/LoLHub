@@ -1,0 +1,6 @@
+__pycache__/
+build/
+dist/
+*.spec
+assets/secret.key
+assets/accounts_db.json

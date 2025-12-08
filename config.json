@@ -1,0 +1,11 @@
+{
+    "api_key": "",
+    "riot_path": "/Applications/League of Legends.app",
+    "auto_accept": false,
+    "auto_pick": false,
+    "auto_ban": false,
+    "pick_champ_id": 266,
+    "pick_champ_name": "Aatrox",
+    "ban_champ_id": 266,
+    "ban_champ_name": "Aatrox"
+}
