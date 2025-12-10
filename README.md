@@ -1,125 +1,56 @@
-# 🏆 League ACC Manager (LoL Rank Tracker)
+# LoLHub - Advanced League of Legends Account Manager
 
-![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS-lightgrey?style=for-the-badge)
-![Security](https://img.shields.io/badge/Security-Fernet%20Encryption-green?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)
+LoLHub is a modern, Electron-based desktop application designed to streamline the management of multiple League of Legends accounts. It provides seamless auto-login, rank tracking, inventory visualization (Skins & Champions), and game automation tools.
 
-> **[TR]** League of Legends hesaplarınızı tek bir merkezden yönetin, liglerini takip edin, kazanma oranlarını analiz edin ve hesap bilgilerinizi şifreli bir şekilde saklayın.
->
-> **[EN]** Manage your League of Legends accounts from a single hub, track their ranks, analyze win rates, and store your credentials securely with encryption.
+## Features
 
----
+### 🔐 Account Management
+- **Auto Login**: Switch accounts instantly with a single click, bypassing the Riot Client login screen.
+- **Secure Storage**: Account credentials are encrypted locally using `crypto` APIs.
+- **Stats Tracking**: Automatically tracks Rank, LP, Blue Essence, and RP for all accounts.
 
-## 📸 Screenshots / Ekran Görüntüleri
+### 🎨 Visual & Inventory (DDragon Integration)
+> ⚠️ **Note**: DDragon image integration is currently unstable/not working and is being investigated.
+- **champion Grid**: View all owned champions with smart search filtering. (Images temporarily disabled).
+- **Skin Showcase**: Displays your owned skins.
+- **Dynamic Backgrounds**: Account cards feature random skin backgrounds from your inventory.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="screenshots/main_ui.png" alt="Main Interface" width="400"/>
-        <br />
-        <b>Main Dashboard / Ana Panel</b>
-      </td>
-      <td align="center">
-        <img src="screenshots/add_account.png" alt="Add Account" width="400"/>
-        <br />
-        <b>Secure Entry / Güvenli Ekleme</b>
-      </td>
-    </tr>
-     <tr>
-      <td align="center">
-        <img src="screenshots/settings1.png" alt="Settings" width="400"/>
-        <br />
-        <b>API Settings / Ayarlar</b>
-      </td>
-      <td align="center">
-        <img src="screenshots/settings2.png" alt="Account Details" width="400"/>
-        <br />
-        <b>Details & Actions / Detaylar</b>
-      </td>
-    </tr>
-  </table>
-</div>
+### 🛠️ Game Tools
+- **Auto Queue**: Automatically accept match prompts.
+- **Auto Pick/Ban**: Pre-select your favorite champions and ban unwanted ones automatically.
+- **Config Sync**: Backup and Restore your game settings (Keybinds, Interface, etc.) to apply them across different accounts instantly.
 
+### 👻 Offline & Privacy
+- **Offline Mode**: (Temporarily Disabled) Launch the game in "Ghost Mode" to appear offline to friends.
+- **Privacy First**: All data is stored locally on your machine.
 
----
+## Installation & Usage
 
-## 🔒 Güvenlik ve Gizlilik (Security & Privacy)
+### Prerequisites
+- Node.js (v18 or higher)
+- League of Legends installed
 
-### Verileriniz Nereye Gidiyor?
-* **Hiçbir Yere.** Hesap kullanıcı adlarınız, şifreleriniz veya notlarınız **asla** internete yüklenmez, bir sunucuya gönderilmez veya üçüncü şahıslarla paylaşılmaz.
-* Tüm veriler sadece **sizin bilgisayarınızda** (`accounts_db.json` dosyasında) saklanır.
+### Setup
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   cd electron-app
+   npm install
+   ```
 
-### Şifreleme Teknolojisi
-Veritabanı dosyanız (`accounts_db.json`) not defteri ile açıldığında okunamaz. Uygulama, Python'un `cryptography` kütüphanesindeki **Fernet (Simetrik Şifreleme)** algoritmasını kullanır.
-* Uygulama ilk açıldığında bilgisayarınıza özel benzersiz bir **Anahtar (Key)** üretir.
-* Şifreleriniz bu anahtar ile **AES-128** standardında şifrelenir.
-* Bu anahtar olmadan veritabanı dosyası çözülemez.
+### Running the App
+- **Method 1 (Recommended)**: Double-click `start_app.bat` in the root folder. This automatically requests Admin privileges (required for Client interaction) and starts the app.
+- **Method 2 (Manual)**:
+   ```bash
+   cd electron-app
+   npm run dev
+   ```
 
----
+## Technologies
+- **Electron**: Cross-platform desktop framework.
+- **React + TypeScript**: Modern, type-safe UI development.
+- **TailwindCSS**: Beautiful, responsive styling.
+- **LCU API**: Direct integration with the League Client Update API for real-time control.
 
-## 🇹🇷 TÜRKÇE (Turkish)
-
-### 🌟 Özellikler
-* **📊 Rank & LP Takibi:** Riot API entegrasyonu ile hesaplarınızın güncel Lig, Aşama ve LP bilgisini anlık olarak çeker.
-* **🎨 Dinamik Arayüz:** Hesabın ligine göre (Gold, Diamond, Challenger vb.) kartların çerçeve rengi otomatik değişir.
-* **📈 Winrate Analizi:** Sezonluk kazanma oranını ve toplam kazanılan/kaybedilen maç sayısını hesaplar.
-* **🟢 Aktiflik Durumu:** Hesabın en son ne zaman maç attığını analiz eder (Örn: "Bugün", "3 gün önce", "2 ay önce").
-* **📝 Not Sistemi:** Her hesap için "Smurf", "Main", "RP Var" gibi özel notlar ekleyebilirsiniz.
-* **⚡ Hızlı Filtreleme:** Hesapları lig sırasına göre (Yüksekten düşüğe veya tam tersi) otomatik dizer.
-
-### 🚀 Kurulum
-
-1.  GitHub sayfasının sağ tarafındaki **"Releases"** kısmından en son sürümü (`.zip`) indirin.
-2.  ZIP dosyasını bir klasöre çıkartın.
-3.  `app.exe` (Windows) veya `app` (macOS) dosyasını çalıştırın.
-
-### ⚙️ İlk Ayarlar (API Key)
-Uygulamanın verileri çekebilmesi için kendi Riot API anahtarınızı girmelisiniz:
-1.  Uygulamada sol alttaki **"⚙️ Settings"** butonuna tıklayın.
-2.  [developer.riotgames.com](https://developer.riotgames.com) adresinden aldığınız **Personal API Key**'i yapıştırın ve kaydedin.
-3.  Ana ekrandan "UPDATE RANKS" butonuna basarak verileri çekin.
-
----
-
-## 🇬🇧 ENGLISH
-
-### 🌟 Key Features
-* **📊 Rank & LP Tracking:** Fetches instant Rank, Tier, and LP info via Riot API integration.
-* **🎨 Dynamic UI:** Card borders change color automatically based on the account's rank (Gold, Diamond, Challenger, etc.).
-* **📈 Winrate Analysis:** Displays seasonal winrate and total win/loss counts.
-* **🟢 Activity Status:** Detects when the last match was played (e.g., "Today", "3 days ago").
-* **📝 Notes System:** Add custom notes for each account to keep track of details.
-* **⚡ Smart Sorting:** Automatically sorts accounts by rank (High to Low or Low to High).
-
-### 🚀 Installation
-
-1.  Download the latest `.zip` from the **"Releases"** section on the right.
-2.  Extract the ZIP file to a folder.
-3.  Run `app.exe` (Windows) or `app` (macOS).
-
-### ⚙️ Configuration (API Key)
-You need your own Riot API Key for the app to fetch data:
-1.  Click the **"⚙️ Settings"** button at the bottom left.
-2.  Paste your **Personal API Key** obtained from [developer.riotgames.com](https://developer.riotgames.com) and save.
-3.  Click "UPDATE RANKS" on the dashboard.
-
----
-
-## 🛠️ For Developers / Geliştiriciler İçin
-
-If you want to run or modify the source code directly:
-
-```bash
-# 1. Clone the repository
-git clone [https://github.com/KullaniciAdin/RepoAdin.git](https://github.com/KullaniciAdin/RepoAdin.git)
-
-# 2. Install required dependencies
-pip install customtkinter requests pillow cryptography pyinstaller
-
-# 3. Run the app
-python app.py
-```
-⚠️ Disclaimer
-This project is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+## Disclaimer
+This project is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.

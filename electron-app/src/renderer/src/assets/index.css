@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-y: hidden; /* App-like feel */
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827; /* gray-900 */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #374151; /* gray-700 */
+    border-radius: 4px;
+    border: 2px solid #111827; /* Padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4B5563; /* gray-600 */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}

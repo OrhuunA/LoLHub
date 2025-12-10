@@ -1,0 +1,25 @@
+**/node_modules/
+electron-app/dist/
+electron-app/out/
+**/dist/
+**/build/
+**/.idea/
+**/.vscode/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# Local Data Files (Sensitive)
+**/accounts.json
+**/config.json
+**/Main_PersistedSettings.json
+*.enc
+
+# Legacy / Python
+*.py
+*.spec
+__pycache__/
+

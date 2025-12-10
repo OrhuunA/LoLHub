@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "lib": [
+            "ES2020"
+        ],
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "moduleResolution": "bundler",
+        "composite": true,
+        "types": [
+            "node"
+        ]
+    },
+    "include": [
+        "electron.vite.config.ts",
+        "src/main/**/*",
+        "src/preload/**/*",
+        "src/preload/index.d.ts"
+    ]
+}
